@@ -8,7 +8,7 @@
   <title>YR Systems | Yan & Rikelmy - Soluções em Tecnologia</title>
   <meta name="description" content="Desenvolvimento de websites profissionais, sistemas personalizados e landing pages para pequenas e médias empresas. Atendimento direto com os desenvolvedores.">
   <meta name="keywords" content="desenvolvimento web, criação de sites, sistemas personalizados, landing pages, sistemas de gerenciamento, desenvolvimento full stack">
-  <meta name="author" content="YR Systems - Yan Ladeia Tortelli & Rikelmy">
+  <meta name="author" content="YR Systems - Yan Ladeia Tortelli & Rikelmy Anacleto">
   <meta name="robots" content="index, follow">
   
   <!-- Open Graph / Facebook -->
@@ -18,52 +18,32 @@
   <meta property="og:description" content="Desenvolvemos soluções digitais que impulsionam negócios. Websites e sistemas personalizados por desenvolvedores Full Stack.">
   <meta property="og:image" content="https://www.yrsystems.com.br/img/og-image.jpg">
 
-  <!-- Twitter -->
-  <meta property="twitter:card" content="summary_large_image">
-  <meta property="twitter:url" content="https://www.yrsystems.com.br/">
-  <meta property="twitter:title" content="YR Systems - Soluções em Tecnologia">
-  <meta property="twitter:description" content="Desenvolvemos soluções digitais que impulsionam negócios. Websites e sistemas personalizados por desenvolvedores Full Stack.">
-  <meta property="twitter:image" content="https://www.yrsystems.com.br/img/og-image.jpg">
-
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="favicon.png">
   
   <!-- Font Awesome 6 -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   
+  <!-- AOS Library (Animações) -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  
   <!-- CSS Principal -->
   <link rel="stylesheet" href="style.css">
-  
-  <!-- Schema Markup para melhor visibilidade -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "ProfessionalService",
-    "name": "YR Systems - Soluções em Tecnologia",
-    "description": "Desenvolvimento de websites e sistemas personalizados",
-    "url": "https://www.yrsystems.com.br",
-    "telephone": "+5511962094589",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "São Paulo",
-      "addressRegion": "SP",
-      "addressCountry": "BR"
-    },
-    "sameAs": [
-      "https://github.com/yanlt32",
-      "https://www.linkedin.com/in/yan-tortelli-65501633b/",
-      "https://github.com/Rikelmydev",
-      "https://www.linkedin.com/in/rikelmy-anacleto-07102006d18/"
-    ]
-  }
-  </script>
 </head>
 <body>
-  <!-- Botão Flutuante WhatsApp com número -->
-  <a href="https://wa.me/5511962094589" class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Fale conosco no WhatsApp">
+  <!-- Botão Voltar ao Topo -->
+  <button id="back-to-top" class="back-to-top" aria-label="Voltar ao topo">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
+  <!-- Botão Flutuante WhatsApp -->
+  <a href="https://wa.me/5511962094589" class="whatsapp-float" target="_blank" rel="noopener noreferrer" id="whatsapp-float">
     <i class="fab fa-whatsapp"></i>
-    <span class="whatsapp-tooltip">Fale conosco</span>
+    <span class="whatsapp-tooltip" id="whatsapp-tooltip">Fale conosco</span>
   </a>
+
+  <!-- Partículas de Fundo -->
+  <div id="particles-js"></div>
 
   <!-- Header / Navegação -->
   <header class="header">
@@ -72,17 +52,31 @@
         <span class="logo-name">YR<span class="logo-accent"> Systems</span></span>
         <span class="logo-full">Yan & Rikelmy</span>
       </div>
-      <button class="mobile-menu-btn" aria-label="Menu">
-        <i class="fas fa-bars"></i>
-      </button>
-      <ul class="nav-menu">
-        <li><a href="#home">Início</a></li>
-        <li><a href="#sobre">Sobre</a></li>
-        <li><a href="#servicos">Serviços</a></li>
-        <li><a href="#portfolio">Portfólio</a></li>
-        <li><a href="#processo">Processo</a></li>
-        <li><a href="#contato">Contato</a></li>
-      </ul>
+      
+      <div class="nav-right">
+        <div class="lang-switcher">
+          <button class="lang-btn active" data-lang="pt" id="lang-pt">PT</button>
+          <span>|</span>
+          <button class="lang-btn" data-lang="en" id="lang-en">EN</button>
+        </div>
+        
+        <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Menu">
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+        </button>
+      </div>
+
+      <div class="nav-menu" id="nav-menu">
+        <ul class="nav-list">
+          <li><a href="#home" id="nav-home">Início</a></li>
+          <li><a href="#about" id="nav-about">Sobre</a></li>
+          <li><a href="#services" id="nav-services">Serviços</a></li>
+          <li><a href="#portfolio" id="nav-portfolio">Portfólio</a></li>
+          <li><a href="#process" id="nav-process">Processo</a></li>
+          <li><a href="#contact" id="nav-contact">Contato</a></li>
+        </ul>
+      </div>
     </nav>
   </header>
 
@@ -90,46 +84,45 @@
     <!-- 1️⃣ HERO SECTION -->
     <section id="home" class="hero">
       <div class="container">
-        <div class="hero-content animate-fadeIn">
-          <h1>🚀 Desenvolvemos soluções digitais que impulsionam negócios</h1>
-          <p class="hero-subtitle">Websites e sistemas personalizados criados por desenvolvedores Full Stack focados em performance, organização e resultado.</p>
+        <div class="hero-content" data-aos="fade-up" data-aos-duration="1000">
+          <h1 id="hero-title">🚀 Desenvolvemos soluções digitais que impulsionam negócios</h1>
+          <p class="hero-subtitle" id="hero-subtitle">Websites e sistemas personalizados criados por desenvolvedores Full Stack focados em performance, organização e resultado.</p>
           <div class="hero-buttons">
-            <a href="#contato" class="btn btn-primary">Solicitar Orçamento</a>
-            <a href="#portfolio" class="btn btn-outline">Ver Projetos</a>
-            <a href="https://wa.me/5511962094589" class="btn btn-whatsapp" target="_blank">Falar no WhatsApp</a>
+            <a href="#contact" class="btn btn-primary" id="hero-btn-quote">Solicitar Orçamento</a>
+            <a href="#portfolio" class="btn btn-outline" id="hero-btn-projects">Ver Projetos</a>
+            <a href="https://wa.me/5511962094589" class="btn btn-whatsapp" target="_blank" id="hero-btn-whatsapp">Falar no WhatsApp</a>
           </div>
         </div>
       </div>
-      <div class="hero-bg"></div>
     </section>
 
     <!-- 2️⃣ SOBRE NÓS -->
-    <section id="sobre" class="sobre">
+    <section id="about" class="sobre">
       <div class="container">
-        <h2 class="section-title">Sobre <span class="text-green">nós</span></h2>
-        <p class="section-subtitle">Conheça os fundadores da YR Systems</p>
+        <h2 class="section-title" data-aos="fade-down"><span id="about-title-part1">Sobre</span> <span class="text-green" id="about-title-part2">nós</span></h2>
+        <p class="section-subtitle" data-aos="fade-down" data-aos-delay="100" id="about-subtitle">Conheça os fundadores da YR Systems</p>
         
         <div class="sobre-grid">
-          <div class="sobre-card animate-slideUp">
+          <div class="sobre-card" data-aos="flip-left" data-aos-duration="800">
             <div class="sobre-icon">
               <i class="fas fa-code"></i>
             </div>
             <h3>👨‍💻 Yan Ladeia Tortelli</h3>
-            <p class="sobre-titulo">Desenvolvedor Full Stack</p>
-            <p class="sobre-desc">Experiência com Node.js, Django, React. Criação de sistemas personalizados com foco em performance e automação de processos empresariais.</p>
+            <p class="sobre-titulo" id="yan-title">Desenvolvedor Full Stack</p>
+            <p class="sobre-desc" id="yan-desc">Experiência com Node.js, Django, React. Criação de sistemas personalizados com foco em performance e automação de processos empresariais.</p>
             <div class="sobre-social">
               <a href="https://github.com/yanlt32" target="_blank" rel="noopener"><i class="fab fa-github"></i></a>
               <a href="https://www.linkedin.com/in/yan-tortelli-65501633b/" target="_blank" rel="noopener"><i class="fab fa-linkedin"></i></a>
             </div>
           </div>
 
-          <div class="sobre-card animate-slideUp delay-1">
+          <div class="sobre-card" data-aos="flip-right" data-aos-duration="800" data-aos-delay="200">
             <div class="sobre-icon">
               <i class="fas fa-laptop-code"></i>
             </div>
             <h3>👨‍💻 Rikelmy Anacleto</h3>
-            <p class="sobre-titulo">Desenvolvedor Full Stack</p>
-            <p class="sobre-desc">Especialista em desenvolvimento web e estruturação de sistemas organizacionais. Soluções práticas, eficientes e escaláveis para pequenas e médias empresas.</p>
+            <p class="sobre-titulo" id="rikelmy-title">Desenvolvedor Full Stack</p>
+            <p class="sobre-desc" id="rikelmy-desc">Especialista em desenvolvimento web e estruturação de sistemas organizacionais. Soluções práticas, eficientes e escaláveis para pequenas e médias empresas.</p>
             <div class="sobre-social">
               <a href="https://github.com/Rikelmydev" target="_blank" rel="noopener"><i class="fab fa-github"></i></a>
               <a href="https://www.linkedin.com/in/rikelmy-anacleto-07102006d18/" target="_blank" rel="noopener"><i class="fab fa-linkedin"></i></a>
@@ -140,18 +133,18 @@
     </section>
 
     <!-- 3️⃣ SERVIÇOS -->
-    <section id="servicos" class="servicos">
+    <section id="services" class="servicos">
       <div class="container">
-        <h2 class="section-title">Nossos <span class="text-green">Serviços</span></h2>
-        <p class="section-subtitle">Soluções personalizadas para seu negócio</p>
+        <h2 class="section-title" data-aos="fade-down"><span id="services-title-part1">Nossos</span> <span class="text-green" id="services-title-part2">Serviços</span></h2>
+        <p class="section-subtitle" data-aos="fade-down" data-aos-delay="100" id="services-subtitle">Soluções personalizadas para seu negócio</p>
         
         <div class="servicos-grid">
-          <div class="servico-card animate-scale">
+          <div class="servico-card" data-aos="zoom-in" data-aos-duration="600">
             <div class="servico-icon">
               <i class="fas fa-globe"></i>
             </div>
-            <h3>🌐 Desenvolvimento de Websites</h3>
-            <ul class="servico-lista">
+            <h3 id="service1-title">🌐 Desenvolvimento de Websites</h3>
+            <ul class="servico-lista" id="service1-list">
               <li>Sites institucionais</li>
               <li>Landing pages de alta conversão</li>
               <li>Sites para comércios locais</li>
@@ -160,12 +153,12 @@
             </ul>
           </div>
 
-          <div class="servico-card animate-scale delay-1">
+          <div class="servico-card" data-aos="zoom-in" data-aos-duration="600" data-aos-delay="200">
             <div class="servico-icon">
               <i class="fas fa-cogs"></i>
             </div>
-            <h3>📊 Sistemas Personalizados</h3>
-            <ul class="servico-lista">
+            <h3 id="service2-title">📊 Sistemas Personalizados</h3>
+            <ul class="servico-lista" id="service2-list">
               <li>Sistema de gerenciamento de despesas</li>
               <li>Sistema de controle financeiro</li>
               <li>Sistema administrativo</li>
@@ -174,12 +167,12 @@
             </ul>
           </div>
 
-          <div class="servico-card animate-scale delay-2">
+          <div class="servico-card" data-aos="zoom-in" data-aos-duration="600" data-aos-delay="400">
             <div class="servico-icon">
               <i class="fas fa-robot"></i>
             </div>
-            <h3>⚙️ Automação de Processos</h3>
-            <ul class="servico-lista">
+            <h3 id="service3-title">⚙️ Automação de Processos</h3>
+            <ul class="servico-lista" id="service3-list">
               <li>Formulários inteligentes</li>
               <li>Integrações simples e eficientes</li>
               <li>Organização digital de fluxos</li>
@@ -188,8 +181,8 @@
           </div>
         </div>
         
-        <div class="aviso-importante">
-          <p><i class="fas fa-exclamation-circle"></i> Atualmente não trabalhamos com e-commerce.</p>
+        <div class="aviso-importante" data-aos="fade-up" data-aos-duration="800">
+          <p><i class="fas fa-exclamation-circle"></i> <span id="ecommerce-warning">Atualmente não trabalhamos com e-commerce.</span></p>
         </div>
       </div>
     </section>
@@ -197,52 +190,52 @@
     <!-- 4️⃣ PORTFÓLIO -->
     <section id="portfolio" class="portfolio">
       <div class="container">
-        <h2 class="section-title">Portfólio <span class="text-green">Real</span></h2>
-        <p class="section-subtitle">Projetos desenvolvidos pela YR Systems</p>
+        <h2 class="section-title" data-aos="fade-down"><span id="portfolio-title-part1">Portfólio</span> <span class="text-green" id="portfolio-title-part2">Real</span></h2>
+        <p class="section-subtitle" data-aos="fade-down" data-aos-delay="100" id="portfolio-subtitle">Projetos desenvolvidos pela YR Systems</p>
         
         <div class="portfolio-grid">
-          <div class="portfolio-card">
+          <div class="portfolio-card" data-aos="fade-right" data-aos-duration="800">
             <div class="portfolio-img">
               <i class="fas fa-chart-line"></i>
             </div>
-            <h3>🔹 Sistema de Gerenciamento de Despesas</h3>
-            <p>Aplicação web para controle financeiro empresarial, com painel administrativo e relatórios simples e intuitivos.</p>
+            <h3 id="portfolio1-title">🔹 Sistema de Gerenciamento de Despesas</h3>
+            <p id="portfolio1-desc">Aplicação web para controle financeiro empresarial, com painel administrativo e relatórios simples e intuitivos.</p>
             <div class="portfolio-links">
               <a href="https://github.com/yanlt32" target="_blank" rel="noopener"><i class="fab fa-github"></i> GitHub</a>
               <a href="https://www.linkedin.com/in/yan-tortelli-65501633b/" target="_blank" rel="noopener"><i class="fab fa-linkedin"></i> LinkedIn</a>
             </div>
           </div>
 
-          <div class="portfolio-card">
+          <div class="portfolio-card" data-aos="fade-up" data-aos-duration="800">
             <div class="portfolio-img">
               <i class="fas fa-comment-dots"></i>
             </div>
-            <h3>🔹 Chatbot para WhatsApp</h3>
-            <p>Automação para atendimento comercial utilizando API WhatsApp, com respostas rápidas e integração simples.</p>
+            <h3 id="portfolio2-title">🔹 Chatbot para WhatsApp</h3>
+            <p id="portfolio2-desc">Automação para atendimento comercial utilizando API WhatsApp, com respostas rápidas e integração simples.</p>
             <div class="portfolio-links">
               <a href="https://github.com/Rikelmydev" target="_blank" rel="noopener"><i class="fab fa-github"></i> GitHub</a>
               <a href="https://www.linkedin.com/in/rikelmy-anacleto-07102006d18/" target="_blank" rel="noopener"><i class="fab fa-linkedin"></i> LinkedIn</a>
             </div>
           </div>
 
-          <div class="portfolio-card">
+          <div class="portfolio-card" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
             <div class="portfolio-img">
               <i class="fas fa-laptop"></i>
             </div>
-            <h3>🔹 Website Institucional Responsivo</h3>
-            <p>Site otimizado para Google, focado em conversão e experiência do usuário em todos os dispositivos.</p>
+            <h3 id="portfolio3-title">🔹 Website Institucional Responsivo</h3>
+            <p id="portfolio3-desc">Site otimizado para Google, focado em conversão e experiência do usuário em todos os dispositivos.</p>
             <div class="portfolio-links">
               <a href="https://github.com/yanlt32" target="_blank" rel="noopener"><i class="fab fa-github"></i> GitHub</a>
               <a href="https://www.linkedin.com/in/yan-tortelli-65501633b/" target="_blank" rel="noopener"><i class="fab fa-linkedin"></i> LinkedIn</a>
             </div>
           </div>
 
-          <div class="portfolio-card">
+          <div class="portfolio-card" data-aos="fade-left" data-aos-duration="800">
             <div class="portfolio-img">
               <i class="fas fa-paper-plane"></i>
             </div>
-            <h3>🔹 Sistema de Candidaturas com Telegram</h3>
-            <p>Plataforma de envio de dados e documentos com notificação automática via Telegram para processos seletivos.</p>
+            <h3 id="portfolio4-title">🔹 Sistema de Candidaturas com Telegram</h3>
+            <p id="portfolio4-desc">Plataforma de envio de dados e documentos com notificação automática via Telegram para processos seletivos.</p>
             <div class="portfolio-links">
               <a href="https://github.com/Rikelmydev" target="_blank" rel="noopener"><i class="fab fa-github"></i> GitHub</a>
               <a href="https://www.linkedin.com/in/rikelmy-anacleto-07102006d18/" target="_blank" rel="noopener"><i class="fab fa-linkedin"></i> LinkedIn</a>
@@ -250,59 +243,59 @@
           </div>
         </div>
         
-        <p class="portfolio-update">*Repositórios reais em breve nos links dos perfis.</p>
+        <p class="portfolio-update" data-aos="fade-up" id="portfolio-update">*Repositórios reais em breve nos links dos perfis.</p>
       </div>
     </section>
 
     <!-- 5️⃣ DIFERENCIAIS -->
     <section class="diferenciais">
       <div class="container">
-        <h2 class="section-title">Nossos <span class="text-green">Diferenciais</span></h2>
+        <h2 class="section-title" data-aos="fade-down"><span id="diffs-title-part1">Nossos</span> <span class="text-green" id="diffs-title-part2">Diferenciais</span></h2>
         <div class="diferenciais-grid">
-          <div class="diferencial-item"><i class="fas fa-user-check"></i> Atendimento direto com os desenvolvedores</div>
-          <div class="diferencial-item"><i class="fas fa-pencil-ruler"></i> Soluções personalizadas</div>
-          <div class="diferencial-item"><i class="fas fa-code"></i> Código otimizado e de qualidade</div>
-          <div class="diferencial-item"><i class="fas fa-rocket"></i> Projetos escaláveis</div>
-          <div class="diferencial-item"><i class="fas fa-headset"></i> Suporte contínuo</div>
-          <div class="diferencial-item"><i class="fas fa-comments"></i> Comunicação clara e transparente</div>
+          <div class="diferencial-item" data-aos="flip-up" data-aos-duration="600"><i class="fas fa-user-check"></i> <span id="diff1">Atendimento direto com os desenvolvedores</span></div>
+          <div class="diferencial-item" data-aos="flip-up" data-aos-duration="600" data-aos-delay="100"><i class="fas fa-pencil-ruler"></i> <span id="diff2">Soluções personalizadas</span></div>
+          <div class="diferencial-item" data-aos="flip-up" data-aos-duration="600" data-aos-delay="200"><i class="fas fa-code"></i> <span id="diff3">Código otimizado e de qualidade</span></div>
+          <div class="diferencial-item" data-aos="flip-up" data-aos-duration="600" data-aos-delay="300"><i class="fas fa-rocket"></i> <span id="diff4">Projetos escaláveis</span></div>
+          <div class="diferencial-item" data-aos="flip-up" data-aos-duration="600" data-aos-delay="400"><i class="fas fa-headset"></i> <span id="diff5">Suporte contínuo</span></div>
+          <div class="diferencial-item" data-aos="flip-up" data-aos-duration="600" data-aos-delay="500"><i class="fas fa-comments"></i> <span id="diff6">Comunicação clara e transparente</span></div>
         </div>
       </div>
     </section>
 
     <!-- 6️⃣ PROCESSO DE TRABALHO -->
-    <section id="processo" class="processo">
+    <section id="process" class="processo">
       <div class="container">
-        <h2 class="section-title">Processo de <span class="text-green">Trabalho</span></h2>
+        <h2 class="section-title" data-aos="fade-down"><span id="process-title-part1">Processo de</span> <span class="text-green" id="process-title-part2">Trabalho</span></h2>
         <div class="processo-steps">
-          <div class="step">
+          <div class="step" data-aos="fade-right" data-aos-duration="600">
             <div class="step-num">1</div>
-            <h4>Entendimento</h4>
-            <p>Análise completa do problema e necessidades</p>
+            <h4 id="step1-title">Entendimento</h4>
+            <p id="step1-desc">Análise completa do problema e necessidades</p>
           </div>
-          <div class="step">
+          <div class="step" data-aos="fade-right" data-aos-duration="600" data-aos-delay="100">
             <div class="step-num">2</div>
-            <h4>Planejamento</h4>
-            <p>Estratégia técnica e arquitetura da solução</p>
+            <h4 id="step2-title">Planejamento</h4>
+            <p id="step2-desc">Estratégia técnica e arquitetura da solução</p>
           </div>
-          <div class="step">
+          <div class="step" data-aos="fade-right" data-aos-duration="600" data-aos-delay="200">
             <div class="step-num">3</div>
-            <h4>Desenvolvimento</h4>
-            <p>Codificação com boas práticas e testes</p>
+            <h4 id="step3-title">Desenvolvimento</h4>
+            <p id="step3-desc">Codificação com boas práticas e testes</p>
           </div>
-          <div class="step">
+          <div class="step" data-aos="fade-left" data-aos-duration="600" data-aos-delay="300">
             <div class="step-num">4</div>
-            <h4>Testes</h4>
-            <p>Validação e garantia de qualidade</p>
+            <h4 id="step4-title">Testes</h4>
+            <p id="step4-desc">Validação e garantia de qualidade</p>
           </div>
-          <div class="step">
+          <div class="step" data-aos="fade-left" data-aos-duration="600" data-aos-delay="400">
             <div class="step-num">5</div>
-            <h4>Entrega</h4>
-            <p>Deploy e treinamento se necessário</p>
+            <h4 id="step5-title">Entrega</h4>
+            <p id="step5-desc">Deploy e treinamento se necessário</p>
           </div>
-          <div class="step">
+          <div class="step" data-aos="fade-left" data-aos-duration="600" data-aos-delay="500">
             <div class="step-num">6</div>
-            <h4>Suporte</h4>
-            <p>Acompanhamento contínuo</p>
+            <h4 id="step6-title">Suporte</h4>
+            <p id="step6-desc">Acompanhamento contínuo</p>
           </div>
         </div>
       </div>
@@ -311,30 +304,30 @@
     <!-- 7️⃣ DEPOIMENTOS -->
     <section class="depoimentos">
       <div class="container">
-        <h2 class="section-title">O que dizem <span class="text-green">nossos clientes</span></h2>
+        <h2 class="section-title" data-aos="fade-down"><span id="testimonials-title-part1">O que dizem</span> <span class="text-green" id="testimonials-title-part2">nossos clientes</span></h2>
         <div class="depoimentos-grid">
-          <div class="depoimento-card">
+          <div class="depoimento-card" data-aos="zoom-in-right" data-aos-duration="700">
             <i class="fas fa-quote-left"></i>
-            <p>"Contratamos a YR Systems para criar nosso site institucional e o resultado superou expectativas. Profissionais dedicados e muito competentes."</p>
+            <p id="testimonial1">"Contratamos a YR Systems para criar nosso site institucional e o resultado superou expectativas. Profissionais dedicados e muito competentes."</p>
             <div class="cliente">
               <strong>Carlos Andrade</strong>
-              <span>Diretor - TechComércio</span>
+              <span id="testimonial1-company">Diretor - TechComércio</span>
             </div>
           </div>
-          <div class="depoimento-card">
+          <div class="depoimento-card" data-aos="zoom-in" data-aos-duration="700" data-aos-delay="200">
             <i class="fas fa-quote-left"></i>
-            <p>"O sistema de gerenciamento de despesas transformou nosso controle financeiro. Simples, eficiente e com suporte excepcional da equipe."</p>
+            <p id="testimonial2">"O sistema de gerenciamento de despesas transformou nosso controle financeiro. Simples, eficiente e com suporte excepcional da equipe."</p>
             <div class="cliente">
               <strong>Marina Costa</strong>
-              <span>CEO - MC Consultoria</span>
+              <span id="testimonial2-company">CEO - MC Consultoria</span>
             </div>
           </div>
-          <div class="depoimento-card">
+          <div class="depoimento-card" data-aos="zoom-in-left" data-aos-duration="700" data-aos-delay="400">
             <i class="fas fa-quote-left"></i>
-            <p>"Equipe técnica incrível, entregaram antes do prazo e com qualidade. Recomendo fortemente a YR Systems para qualquer negócio."</p>
+            <p id="testimonial3">"Equipe técnica incrível, entregaram antes do prazo e com qualidade. Recomendo fortemente a YR Systems para qualquer negócio."</p>
             <div class="cliente">
               <strong>Roberto Nunes</strong>
-              <span>Sócio - Nunes & Filhos</span>
+              <span id="testimonial3-company">Sócio - Nunes & Filhos</span>
             </div>
           </div>
         </div>
@@ -342,50 +335,56 @@
     </section>
 
     <!-- 8️⃣ CHAMADA FINAL / CONTATO -->
-    <section id="contato" class="cta">
+    <section id="contact" class="cta">
       <div class="container">
-        <h2>Seu negócio precisa de uma solução digital eficiente?</h2>
-        <p>Vamos desenvolver algo simples, estratégico e profissional para sua empresa.</p>
-        <a href="https://wa.me/5511962094589" class="btn btn-primary btn-large" target="_blank">Solicitar Orçamento Agora</a>
+        <h2 data-aos="fade-down" id="cta-title">Seu negócio precisa de uma solução digital eficiente?</h2>
+        <p data-aos="fade-up" data-aos-delay="100" id="cta-text">Vamos desenvolver algo simples, estratégico e profissional para sua empresa.</p>
+        <a href="https://wa.me/5511962094589" class="btn btn-primary btn-large" target="_blank" data-aos="zoom-in" data-aos-delay="200" id="cta-btn">Solicitar Orçamento Agora</a>
       </div>
     </section>
 
-    <!-- 9️⃣ FUNCIONALIDADES (rodapé) -->
+    <!-- 9️⃣ RODAPÉ -->
     <footer class="footer">
       <div class="container">
         <div class="footer-grid">
-          <div class="footer-info">
+          <div class="footer-info" data-aos="fade-right">
             <h3>YR Systems</h3>
-            <p>Soluções em Tecnologia</p>
+            <p id="footer-tagline">Soluções em Tecnologia</p>
             <p><i class="fas fa-phone"></i> <a href="tel:+5511962094589">(11) 96209-4589</a></p>
             <p><i class="fas fa-envelope"></i> <a href="mailto:contato@yrsystems.com.br">contato@yrsystems.com.br</a></p>
           </div>
-          <div class="footer-features">
-            <h4>Funcionalidades</h4>
+          <div class="footer-features" data-aos="fade-up">
+            <h4 id="features-title">Funcionalidades</h4>
             <ul>
-              <li><i class="fas fa-check-circle"></i> SEO otimizado</li>
-              <li><i class="fas fa-check-circle"></i> 100% Responsivo</li>
-              <li><i class="fas fa-check-circle"></i> Integração WhatsApp</li>
-              <li><i class="fas fa-check-circle"></i> Estrutura para Google Ads</li>
-              <li><i class="fas fa-check-circle"></i> Performance otimizada</li>
+              <li><i class="fas fa-check-circle"></i> <span id="feature1">SEO otimizado</span></li>
+              <li><i class="fas fa-check-circle"></i> <span id="feature2">100% Responsivo</span></li>
+              <li><i class="fas fa-check-circle"></i> <span id="feature3">Integração WhatsApp</span></li>
+              <li><i class="fas fa-check-circle"></i> <span id="feature4">Estrutura para Google Ads</span></li>
+              <li><i class="fas fa-check-circle"></i> <span id="feature5">Performance otimizada</span></li>
             </ul>
           </div>
-          <div class="footer-social">
-            <h4>Redes</h4>
+          <div class="footer-social" data-aos="fade-left">
+            <h4 id="social-title">Redes</h4>
             <a href="https://github.com/yanlt32" target="_blank"><i class="fab fa-github"></i></a>
             <a href="https://www.linkedin.com/in/yan-tortelli-65501633b/" target="_blank"><i class="fab fa-linkedin"></i></a>
             <a href="https://github.com/Rikelmydev" target="_blank"><i class="fab fa-github"></i></a>
             <a href="https://www.linkedin.com/in/rikelmy-anacleto-07102006d18/" target="_blank"><i class="fab fa-linkedin"></i></a>
           </div>
         </div>
-        <div class="footer-bottom">
-          <p>&copy; 2025 YR Systems - Yan Ladeia Tortelli & Rikelmy Anacleto. Todos os direitos reservados.</p>
+        <div class="footer-bottom" data-aos="fade-up">
+          <p id="copyright">&copy; 2025 YR Systems - Yan Ladeia Tortelli & Rikelmy Anacleto. Todos os direitos reservados.</p>
         </div>
       </div>
     </footer>
   </main>
 
-  <!-- JavaScript -->
+  <!-- Particles.js para animação de fundo -->
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+  
+  <!-- AOS Library JS -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  
+  <!-- JavaScript Principal -->
   <script src="script.js"></script>
 </body>
 </html>
