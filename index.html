@@ -73,6 +73,7 @@
           <li><a href="#about" id="nav-about">Sobre</a></li>
           <li><a href="#services" id="nav-services">Serviços</a></li>
           <li><a href="#portfolio" id="nav-portfolio">Portfólio</a></li>
+          <li><a href="#demo" id="nav-demo">Demonstração</a></li>
           <li><a href="#process" id="nav-process">Processo</a></li>
           <li><a href="#contact" id="nav-contact">Contato</a></li>
         </ul>
@@ -85,7 +86,7 @@
     <section id="home" class="hero">
       <div class="container">
         <div class="hero-content" data-aos="fade-up" data-aos-duration="1000">
-          <h1 id="hero-title">🚀 Desenvolvemos soluções digitais que impulsionam negócios</h1>
+          <h1 id="hero-title">Desenvolvemos soluções digitais que impulsionam negócios</h1>
           <p class="hero-subtitle" id="hero-subtitle">Websites e sistemas personalizados criados por desenvolvedores Full Stack focados em performance, organização e resultado.</p>
           <div class="hero-buttons">
             <a href="#contact" class="btn btn-primary" id="hero-btn-quote">Solicitar Orçamento</a>
@@ -246,6 +247,342 @@
         <p class="portfolio-update" data-aos="fade-up" id="portfolio-update">*Repositórios reais em breve nos links dos perfis.</p>
       </div>
     </section>
+
+    <!-- 4️⃣.5️⃣ DEMONSTRAÇÃO DE LAYOUTS (NOVA SEÇÃO) -->
+    <section id="demo" class="demo-layouts">
+      <div class="container">
+        <h2 class="section-title" data-aos="fade-down"><span id="demo-title-part1">Demonstração</span> <span class="text-green" id="demo-title-part2">de Layouts</span></h2>
+        <p class="section-subtitle" data-aos="fade-down" data-aos-delay="100" id="demo-subtitle">Visualize nossos templates e estruturas prontas para seu negócio</p>
+        
+        <!-- Filtros de Categoria -->
+        <div class="demo-filters" data-aos="fade-up" data-aos-delay="150">
+          <button class="filter-btn active" data-filter="all" id="filter-all">Todos</button>
+          <button class="filter-btn" data-filter="website" id="filter-website">Websites</button>
+          <button class="filter-btn" data-filter="dashboard" id="filter-dashboard">Dashboards</button>
+          <button class="filter-btn" data-filter="landing" id="filter-landing">Landing Pages</button>
+          <button class="filter-btn" data-filter="system" id="filter-system">Sistemas</button>
+        </div>
+        
+        <!-- Grade de Demonstrações -->
+        <div class="demo-grid" id="demo-grid">
+          <!-- Layout 1 - Website Institucional -->
+          <div class="demo-item" data-category="website" data-aos="zoom-in" data-aos-duration="600">
+            <div class="demo-preview">
+              <div class="demo-browser">
+                <div class="browser-dots">
+                  <span class="browser-dot red"></span>
+                  <span class="browser-dot yellow"></span>
+                  <span class="browser-dot green"></span>
+                </div>
+                <div class="browser-content">
+                  <div class="mockup-screen mockup-website-1">
+                    <div class="mockup-header">
+                      <div class="mockup-logo"></div>
+                      <div class="mockup-nav">
+                        <span></span><span></span><span></span>
+                      </div>
+                    </div>
+                    <div class="mockup-hero">
+                      <div class="mockup-hero-text"></div>
+                      <div class="mockup-hero-text short"></div>
+                      <div class="mockup-hero-btn"></div>
+                    </div>
+                    <div class="mockup-cards">
+                      <div class="mockup-card"></div>
+                      <div class="mockup-card"></div>
+                      <div class="mockup-card"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="demo-overlay">
+                <div class="demo-actions">
+                  <button class="demo-expand-btn" onclick="openDemoModal(1)">
+                    <i class="fas fa-expand-alt"></i> <span id="demo-expand1">Expandir</span>
+                  </button>
+                  <a href="#contact" class="demo-contact-btn">
+                    <i class="fas fa-comment"></i> <span id="demo-contact1">Solicitar</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="demo-info">
+              <h4 id="demo1-title">Layout Institucional Profissional</h4>
+              <p id="demo1-desc">Design moderno para empresas, com seções completas e chamadas estratégicas.</p>
+              <div class="demo-tags">
+                <span class="demo-tag">Responsivo</span>
+                <span class="demo-tag">SEO</span>
+                <span class="demo-tag">WhatsApp</span>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Layout 2 - Dashboard Administrativo -->
+          <div class="demo-item" data-category="dashboard system" data-aos="zoom-in" data-aos-duration="600" data-aos-delay="100">
+            <div class="demo-preview">
+              <div class="demo-browser">
+                <div class="browser-dots">
+                  <span class="browser-dot red"></span>
+                  <span class="browser-dot yellow"></span>
+                  <span class="browser-dot green"></span>
+                </div>
+                <div class="browser-content">
+                  <div class="mockup-screen mockup-dashboard-1">
+                    <div class="mockup-sidebar">
+                      <div class="mockup-menu-item"></div>
+                      <div class="mockup-menu-item"></div>
+                      <div class="mockup-menu-item"></div>
+                      <div class="mockup-menu-item"></div>
+                    </div>
+                    <div class="mockup-main">
+                      <div class="mockup-stats">
+                        <div class="mockup-stat"></div>
+                        <div class="mockup-stat"></div>
+                        <div class="mockup-stat"></div>
+                      </div>
+                      <div class="mockup-chart"></div>
+                      <div class="mockup-table"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="demo-overlay">
+                <div class="demo-actions">
+                  <button class="demo-expand-btn" onclick="openDemoModal(2)">
+                    <i class="fas fa-expand-alt"></i> <span id="demo-expand2">Expandir</span>
+                  </button>
+                  <a href="#contact" class="demo-contact-btn">
+                    <i class="fas fa-comment"></i> <span id="demo-contact2">Solicitar</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="demo-info">
+              <h4 id="demo2-title">Dashboard Administrativo</h4>
+              <p id="demo2-desc">Painel de controle intuitivo com gráficos, métricas e gerenciamento de dados.</p>
+              <div class="demo-tags">
+                <span class="demo-tag">Gráficos</span>
+                <span class="demo-tag">Relatórios</span>
+                <span class="demo-tag">Admin</span>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Layout 3 - Landing Page de Alta Conversão -->
+          <div class="demo-item" data-category="landing" data-aos="zoom-in" data-aos-duration="600" data-aos-delay="200">
+            <div class="demo-preview">
+              <div class="demo-browser">
+                <div class="browser-dots">
+                  <span class="browser-dot red"></span>
+                  <span class="browser-dot yellow"></span>
+                  <span class="browser-dot green"></span>
+                </div>
+                <div class="browser-content">
+                  <div class="mockup-screen mockup-landing-1">
+                    <div class="mockup-landing-header">
+                      <div class="mockup-landing-logo"></div>
+                      <div class="mockup-landing-btn"></div>
+                    </div>
+                    <div class="mockup-landing-hero">
+                      <div class="mockup-landing-title"></div>
+                      <div class="mockup-landing-subtitle"></div>
+                      <div class="mockup-landing-cta"></div>
+                    </div>
+                    <div class="mockup-landing-features">
+                      <div class="mockup-feature"></div>
+                      <div class="mockup-feature"></div>
+                      <div class="mockup-feature"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="demo-overlay">
+                <div class="demo-actions">
+                  <button class="demo-expand-btn" onclick="openDemoModal(3)">
+                    <i class="fas fa-expand-alt"></i> <span id="demo-expand3">Expandir</span>
+                  </button>
+                  <a href="#contact" class="demo-contact-btn">
+                    <i class="fas fa-comment"></i> <span id="demo-contact3">Solicitar</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="demo-info">
+              <h4 id="demo3-title">Landing Page para Produtos</h4>
+              <p id="demo3-desc">Layout focado em conversão com CTAs estratégicos e seções persuasivas.</p>
+              <div class="demo-tags">
+                <span class="demo-tag">Conversão</span>
+                <span class="demo-tag">CTA</span>
+                <span class="demo-tag">Lead</span>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Layout 4 - Sistema de Gestão -->
+          <div class="demo-item" data-category="system" data-aos="zoom-in" data-aos-duration="600">
+            <div class="demo-preview">
+              <div class="demo-browser">
+                <div class="browser-dots">
+                  <span class="browser-dot red"></span>
+                  <span class="browser-dot yellow"></span>
+                  <span class="browser-dot green"></span>
+                </div>
+                <div class="browser-content">
+                  <div class="mockup-screen mockup-system-1">
+                    <div class="mockup-system-header">
+                      <div class="mockup-system-search"></div>
+                      <div class="mockup-system-user"></div>
+                    </div>
+                    <div class="mockup-system-content">
+                      <div class="mockup-system-filters"></div>
+                      <div class="mockup-system-list">
+                        <div class="mockup-list-item"></div>
+                        <div class="mockup-list-item"></div>
+                        <div class="mockup-list-item"></div>
+                        <div class="mockup-list-item"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="demo-overlay">
+                <div class="demo-actions">
+                  <button class="demo-expand-btn" onclick="openDemoModal(4)">
+                    <i class="fas fa-expand-alt"></i> <span id="demo-expand4">Expandir</span>
+                  </button>
+                  <a href="#contact" class="demo-contact-btn">
+                    <i class="fas fa-comment"></i> <span id="demo-contact4">Solicitar</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="demo-info">
+              <h4 id="demo4-title">Sistema de Gerenciamento</h4>
+              <p id="demo4-desc">Estrutura completa para gestão de clientes, estoque ou finanças.</p>
+              <div class="demo-tags">
+                <span class="demo-tag">CRUD</span>
+                <span class="demo-tag">Filtros</span>
+                <span class="demo-tag">Gestão</span>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Layout 5 - Site para Serviços Locais -->
+          <div class="demo-item" data-category="website" data-aos="zoom-in" data-aos-duration="600" data-aos-delay="100">
+            <div class="demo-preview">
+              <div class="demo-browser">
+                <div class="browser-dots">
+                  <span class="browser-dot red"></span>
+                  <span class="browser-dot yellow"></span>
+                  <span class="browser-dot green"></span>
+                </div>
+                <div class="browser-content">
+                  <div class="mockup-screen mockup-website-2">
+                    <div class="mockup-local-header">
+                      <div class="mockup-local-logo"></div>
+                      <div class="mockup-local-contact"></div>
+                    </div>
+                    <div class="mockup-local-gallery">
+                      <div class="mockup-gallery-item"></div>
+                      <div class="mockup-gallery-item"></div>
+                    </div>
+                    <div class="mockup-local-info"></div>
+                    <div class="mockup-local-map"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="demo-overlay">
+                <div class="demo-actions">
+                  <button class="demo-expand-btn" onclick="openDemoModal(5)">
+                    <i class="fas fa-expand-alt"></i> <span id="demo-expand5">Expandir</span>
+                  </button>
+                  <a href="#contact" class="demo-contact-btn">
+                    <i class="fas fa-comment"></i> <span id="demo-contact5">Solicitar</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="demo-info">
+              <h4 id="demo5-title">Site para Negócios Locais</h4>
+              <p id="demo5-desc">Perfeito para restaurantes, salões, oficinas e comércios de bairro.</p>
+              <div class="demo-tags">
+                <span class="demo-tag">Local</span>
+                <span class="demo-tag">Galeria</span>
+                <span class="demo-tag">Contato</span>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Layout 6 - Sistema Financeiro -->
+          <div class="demo-item" data-category="dashboard system" data-aos="zoom-in" data-aos-duration="600" data-aos-delay="200">
+            <div class="demo-preview">
+              <div class="demo-browser">
+                <div class="browser-dots">
+                  <span class="browser-dot red"></span>
+                  <span class="browser-dot yellow"></span>
+                  <span class="browser-dot green"></span>
+                </div>
+                <div class="browser-content">
+                  <div class="mockup-screen mockup-finance-1">
+                    <div class="mockup-finance-header">
+                      <div class="mockup-finance-period"></div>
+                      <div class="mockup-finance-export"></div>
+                    </div>
+                    <div class="mockup-finance-summary">
+                      <div class="mockup-summary-card revenue"></div>
+                      <div class="mockup-summary-card expenses"></div>
+                      <div class="mockup-summary-card balance"></div>
+                    </div>
+                    <div class="mockup-finance-chart"></div>
+                    <div class="mockup-finance-transactions"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="demo-overlay">
+                <div class="demo-actions">
+                  <button class="demo-expand-btn" onclick="openDemoModal(6)">
+                    <i class="fas fa-expand-alt"></i> <span id="demo-expand6">Expandir</span>
+                  </button>
+                  <a href="#contact" class="demo-contact-btn">
+                    <i class="fas fa-comment"></i> <span id="demo-contact6">Solicitar</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="demo-info">
+              <h4 id="demo6-title">Sistema de Controle Financeiro</h4>
+              <p id="demo6-desc">Acompanhe receitas, despesas e gere relatórios detalhados.</p>
+              <div class="demo-tags">
+                <span class="demo-tag">Finanças</span>
+                <span class="demo-tag">Relatórios</span>
+                <span class="demo-tag">Gráficos</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Botão Ver Mais -->
+        <div class="demo-more" data-aos="fade-up">
+          <a href="#contact" class="btn btn-outline" id="demo-custom">Solicite um Layout Personalizado</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== MODAL PARA EXPANSÃO DOS LAYOUTS ===== -->
+    <div id="demo-modal" class="demo-modal">
+      <div class="demo-modal-content">
+        <div class="demo-modal-header">
+          <h3 id="modal-title">Layout em Detalhe</h3>
+          <button class="demo-modal-close" onclick="closeDemoModal()">&times;</button>
+        </div>
+        <div class="demo-modal-body" id="modal-body">
+          <!-- Conteúdo será preenchido via JavaScript -->
+        </div>
+        <div class="demo-modal-footer">
+          <a href="#contact" class="btn btn-primary" onclick="closeDemoModal()" id="modal-btn">Solicitar este Layout</a>
+        </div>
+      </div>
+    </div>
 
     <!-- 5️⃣ DIFERENCIAIS -->
     <section class="diferenciais">

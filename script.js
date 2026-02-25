@@ -9,11 +9,12 @@ const translations = {
     navAbout: "Sobre",
     navServices: "Serviços",
     navPortfolio: "Portfólio",
+    navDemo: "Demonstração",
     navProcess: "Processo",
     navContact: "Contato",
     
     // Hero
-    heroTitle: "🚀 Desenvolvemos soluções digitais que impulsionam negócios",
+    heroTitle: " Desenvolvemos soluções digitais que impulsionam negócios",
     heroSubtitle: "Websites e sistemas personalizados criados por desenvolvedores Full Stack focados em performance, organização e resultado.",
     heroBtnQuote: "Solicitar Orçamento",
     heroBtnProjects: "Ver Projetos",
@@ -53,6 +54,32 @@ const translations = {
     portfolio4Title: "🔹 Sistema de Candidaturas com Telegram",
     portfolio4Desc: "Plataforma de envio de dados e documentos com notificação automática via Telegram para processos seletivos.",
     portfolioUpdate: "*Repositórios reais em breve nos links dos perfis.",
+    
+    // Demo Layouts
+    demoTitlePart1: "Demonstração",
+    demoTitlePart2: "de Layouts",
+    demoSubtitle: "Visualize nossos templates e estruturas prontas para seu negócio",
+    filterAll: "Todos",
+    filterWebsite: "Websites",
+    filterDashboard: "Dashboards",
+    filterLanding: "Landing Pages",
+    filterSystem: "Sistemas",
+    demo1Title: "Layout Institucional Profissional",
+    demo1Desc: "Design moderno para empresas, com seções completas e chamadas estratégicas.",
+    demo2Title: "Dashboard Administrativo",
+    demo2Desc: "Painel de controle intuitivo com gráficos, métricas e gerenciamento de dados.",
+    demo3Title: "Landing Page para Produtos",
+    demo3Desc: "Layout focado em conversão com CTAs estratégicos e seções persuasivas.",
+    demo4Title: "Sistema de Gerenciamento",
+    demo4Desc: "Estrutura completa para gestão de clientes, estoque ou finanças.",
+    demo5Title: "Site para Negócios Locais",
+    demo5Desc: "Perfeito para restaurantes, salões, oficinas e comércios de bairro.",
+    demo6Title: "Sistema de Controle Financeiro",
+    demo6Desc: "Acompanhe receitas, despesas e gere relatórios detalhados.",
+    demoExpand: "Expandir",
+    demoContact: "Solicitar",
+    demoCustom: "Solicite um Layout Personalizado",
+    modalBtn: "Solicitar este Layout",
     
     // Diferenciais
     diffsTitle1: "Nossos",
@@ -116,11 +143,12 @@ const translations = {
     navAbout: "About",
     navServices: "Services",
     navPortfolio: "Portfolio",
+    navDemo: "Showcase",
     navProcess: "Process",
     navContact: "Contact",
     
     // Hero
-    heroTitle: "🚀 We develop digital solutions that boost your business",
+    heroTitle: " We develop digital solutions that boost your business",
     heroSubtitle: "Custom websites and systems created by Full Stack developers focused on performance, organization and results.",
     heroBtnQuote: "Get a Quote",
     heroBtnProjects: "View Projects",
@@ -160,6 +188,32 @@ const translations = {
     portfolio4Title: "🔹 Application System with Telegram",
     portfolio4Desc: "Platform for sending data and documents with automatic notification via Telegram for selection processes.",
     portfolioUpdate: "*Real repositories coming soon on profile links.",
+    
+    // Demo Layouts
+    demoTitlePart1: "Layout",
+    demoTitlePart2: "Showcase",
+    demoSubtitle: "View our templates and ready-made structures for your business",
+    filterAll: "All",
+    filterWebsite: "Websites",
+    filterDashboard: "Dashboards",
+    filterLanding: "Landing Pages",
+    filterSystem: "Systems",
+    demo1Title: "Professional Business Layout",
+    demo1Desc: "Modern design for companies, with complete sections and strategic calls.",
+    demo2Title: "Admin Dashboard",
+    demo2Desc: "Intuitive control panel with charts, metrics and data management.",
+    demo3Title: "Product Landing Page",
+    demo3Desc: "Conversion-focused layout with strategic CTAs and persuasive sections.",
+    demo4Title: "Management System",
+    demo4Desc: "Complete structure for customer, inventory or financial management.",
+    demo5Title: "Local Business Website",
+    demo5Desc: "Perfect for restaurants, salons, workshops and neighborhood businesses.",
+    demo6Title: "Financial Control System",
+    demo6Desc: "Track revenues, expenses and generate detailed reports.",
+    demoExpand: "Expand",
+    demoContact: "Request",
+    demoCustom: "Request a Custom Layout",
+    modalBtn: "Request this Layout",
     
     // Differentials
     diffsTitle1: "Our",
@@ -229,6 +283,9 @@ function setLanguage(lang) {
   document.getElementById('nav-about').textContent = translations[lang].navAbout;
   document.getElementById('nav-services').textContent = translations[lang].navServices;
   document.getElementById('nav-portfolio').textContent = translations[lang].navPortfolio;
+  if (document.getElementById('nav-demo')) {
+    document.getElementById('nav-demo').textContent = translations[lang].navDemo;
+  }
   document.getElementById('nav-process').textContent = translations[lang].navProcess;
   document.getElementById('nav-contact').textContent = translations[lang].navContact;
   
@@ -296,6 +353,44 @@ function setLanguage(lang) {
   document.getElementById('portfolio4-title').textContent = translations[lang].portfolio4Title;
   document.getElementById('portfolio4-desc').textContent = translations[lang].portfolio4Desc;
   document.getElementById('portfolio-update').textContent = translations[lang].portfolioUpdate;
+  
+  // Demo Layouts - Títulos e textos
+  document.getElementById('demo-title-part1').textContent = translations[lang].demoTitlePart1;
+  document.getElementById('demo-title-part2').textContent = translations[lang].demoTitlePart2;
+  document.getElementById('demo-subtitle').textContent = translations[lang].demoSubtitle;
+  
+  // Filtros
+  document.getElementById('filter-all').textContent = translations[lang].filterAll;
+  document.getElementById('filter-website').textContent = translations[lang].filterWebsite;
+  document.getElementById('filter-dashboard').textContent = translations[lang].filterDashboard;
+  document.getElementById('filter-landing').textContent = translations[lang].filterLanding;
+  document.getElementById('filter-system').textContent = translations[lang].filterSystem;
+  
+  // Títulos dos layouts
+  document.getElementById('demo1-title').textContent = translations[lang].demo1Title;
+  document.getElementById('demo1-desc').textContent = translations[lang].demo1Desc;
+  document.getElementById('demo2-title').textContent = translations[lang].demo2Title;
+  document.getElementById('demo2-desc').textContent = translations[lang].demo2Desc;
+  document.getElementById('demo3-title').textContent = translations[lang].demo3Title;
+  document.getElementById('demo3-desc').textContent = translations[lang].demo3Desc;
+  document.getElementById('demo4-title').textContent = translations[lang].demo4Title;
+  document.getElementById('demo4-desc').textContent = translations[lang].demo4Desc;
+  document.getElementById('demo5-title').textContent = translations[lang].demo5Title;
+  document.getElementById('demo5-desc').textContent = translations[lang].demo5Desc;
+  document.getElementById('demo6-title').textContent = translations[lang].demo6Title;
+  document.getElementById('demo6-desc').textContent = translations[lang].demo6Desc;
+  
+  // Botões dos layouts
+  for (let i = 1; i <= 6; i++) {
+    const expandBtn = document.getElementById(`demo-expand${i}`);
+    const contactBtn = document.getElementById(`demo-contact${i}`);
+    if (expandBtn) expandBtn.textContent = translations[lang].demoExpand;
+    if (contactBtn) contactBtn.textContent = translations[lang].demoContact;
+  }
+  
+  // Botão personalizado e modal
+  document.getElementById('demo-custom').textContent = translations[lang].demoCustom;
+  document.getElementById('modal-btn').textContent = translations[lang].modalBtn;
   
   // Diferenciais
   document.getElementById('diffs-title-part1').textContent = translations[lang].diffsTitle1;
@@ -564,6 +659,170 @@ document.addEventListener('DOMContentLoaded', function() {
       behavior: 'smooth'
     });
   });
+
+  // ===== NOVO CÓDIGO: DEMONSTRAÇÃO DE LAYOUTS =====
+  
+  // Dados dos layouts para o modal
+  const demoLayoutsData = {
+    1: {
+      title: "Layout Institucional Profissional",
+      description: "Website completo para empresas que desejam uma presença online forte e profissional. Inclui seções de home, sobre, serviços, portfólio, contato e blog integrado. Design moderno e totalmente responsivo, otimizado para conversão e experiência do usuário.",
+      features: [
+        "Design responsivo para todos dispositivos",
+        "Otimização SEO avançada",
+        "Integração com WhatsApp",
+        "Blog integrado",
+        "Formulário de contato",
+        "Galeria de projetos"
+      ]
+    },
+    2: {
+      title: "Dashboard Administrativo",
+      description: "Painel de controle completo para gerenciar dados, usuários e métricas do seu negócio. Ideal para empresas que precisam de visualização de dados em tempo real e tomada de decisões baseadas em informações concretas.",
+      features: [
+        "Gráficos interativos em tempo real",
+        "Relatórios personalizáveis",
+        "Gestão de usuários e permissões",
+        "Exportação de dados (PDF/Excel)",
+        "Filtros avançados",
+        "Notificações em tempo real"
+      ]
+    },
+    3: {
+      title: "Landing Page de Alta Conversão",
+      description: "Página única focada em conversão, perfeita para campanhas de marketing, lançamentos de produtos e captura de leads. Estrutura pensada para guiar o visitante até a ação desejada.",
+      features: [
+        "CTAs estratégicos posicionados",
+        "Formulário de captura otimizado",
+        "Contador regressivo",
+        "Prova social integrada (depoimentos)",
+        "Animações persuasivas",
+        "Testes A/B prontos"
+      ]
+    },
+    4: {
+      title: "Sistema de Gerenciamento",
+      description: "Sistema completo para gestão de clientes, estoque, serviços ou qualquer necessidade específica do seu negócio. Interface intuitiva e fácil de usar, com todas as funcionalidades essenciais.",
+      features: [
+        "CRUD completo (Criar, Ler, Atualizar, Deletar)",
+        "Busca avançada com filtros",
+        "Filtros personalizados por categoria",
+        "Relatórios detalhados",
+        "Exportação em múltiplos formatos",
+        "Controle de permissões por usuário"
+      ]
+    },
+    5: {
+      title: "Site para Negócios Locais",
+      description: "Desenvolvido especialmente para negócios de bairro como restaurantes, salões de beleza, oficinas e comércios locais. Foco em atrair clientes da região e facilitar o contato direto.",
+      features: [
+        "Mapa de localização integrado",
+        "Galeria de fotos dos serviços",
+        "Cardápio/serviços online",
+        "Botão de WhatsApp direto",
+        "Horário de funcionamento",
+        "Avaliações de clientes"
+      ]
+    },
+    6: {
+      title: "Sistema de Controle Financeiro",
+      description: "Gerencie todas as finanças do seu negócio em um só lugar. Controle receitas, despesas e visualize relatórios detalhados para tomar melhores decisões financeiras.",
+      features: [
+        "Controle de receitas e despesas",
+        "Gráficos financeiros interativos",
+        "Relatórios por período personalizado",
+        "Exportação para Excel/PDF",
+        "Metas financeiras",
+        "Alertas de vencimentos"
+      ]
+    }
+  };
+
+  // Função para abrir o modal
+  window.openDemoModal = function(layoutId) {
+    const modal = document.getElementById('demo-modal');
+    const modalTitle = document.getElementById('modal-title');
+    const modalBody = document.getElementById('modal-body');
+    const data = demoLayoutsData[layoutId];
+    
+    // Pegar título traduzido se disponível
+    const currentLang = localStorage.getItem('preferredLanguage') || 'pt';
+    const titleElement = document.getElementById(`demo${layoutId}-title`);
+    
+    modalTitle.textContent = titleElement ? titleElement.textContent : data.title;
+    
+    // Criar conteúdo do modal
+    modalBody.innerHTML = `
+      <div class="modal-mockup-large"></div>
+      <p class="modal-description">${data.description}</p>
+      <div class="modal-features">
+        ${data.features.map(feature => `
+          <div class="modal-feature-item">
+            <i class="fas fa-check-circle"></i>
+            <span>${feature}</span>
+          </div>
+        `).join('')}
+      </div>
+    `;
+    
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  };
+
+  // Função para fechar o modal
+  window.closeDemoModal = function() {
+    const modal = document.getElementById('demo-modal');
+    modal.classList.remove('active');
+    document.body.style.overflow = '';
+  };
+
+  // Fechar modal ao clicar fora
+  document.addEventListener('click', function(e) {
+    const modal = document.getElementById('demo-modal');
+    if (e.target === modal) {
+      closeDemoModal();
+    }
+  });
+
+  // Fechar modal com tecla ESC
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+      closeDemoModal();
+    }
+  });
+
+  // Filtrar layouts por categoria
+  const filterButtons = document.querySelectorAll('.filter-btn');
+  const demoItems = document.querySelectorAll('.demo-item');
+
+  if (filterButtons.length > 0) {
+    filterButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        // Atualizar botão ativo
+        filterButtons.forEach(btn => btn.classList.remove('active'));
+        button.classList.add('active');
+        
+        const filter = button.getAttribute('data-filter');
+        
+        // Filtrar itens
+        demoItems.forEach(item => {
+          if (filter === 'all' || item.getAttribute('data-category').includes(filter)) {
+            item.style.display = 'block';
+            setTimeout(() => {
+              item.style.opacity = '1';
+              item.style.transform = 'scale(1)';
+            }, 50);
+          } else {
+            item.style.opacity = '0';
+            item.style.transform = 'scale(0.8)';
+            setTimeout(() => {
+              item.style.display = 'none';
+            }, 300);
+          }
+        });
+      });
+    });
+  }
   
   console.log('YR Systems carregada com sucesso!');
 });
